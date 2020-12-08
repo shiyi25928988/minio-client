@@ -39,10 +39,6 @@ public class MinioClientBuilder {
     private String password;
 
     @Inject
-    @Named("minio.sessiontoken")
-    private String sessiontoken;
-
-    @Inject
     @Named("minio.host.isHttps")
     private boolean isHttps;
 
