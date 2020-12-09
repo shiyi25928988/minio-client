@@ -1,8 +1,8 @@
 package minio.client.spring;
 
 import io.minio.MinioClient;
-import minio.client.spring.services.FileUploadService;
-import minio.client.spring.services.FileUploadServiceImpl;
+import minio.client.services.FileUploadService;
+import minio.client.services.FileUploadServiceImpl;
 import okhttp3.OkHttpClient;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

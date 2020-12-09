@@ -5,6 +5,7 @@ import io.minio.ObjectWriteResponse;
 import io.minio.PutObjectArgs;
 import io.minio.errors.*;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -26,6 +27,7 @@ public class FileUploadServiceImpl implements FileUploadService{
 
     @Inject
     @Named("minio.bucket")
+    @Value("${minio.bucket}")
     private String bucket;
 
     @Override

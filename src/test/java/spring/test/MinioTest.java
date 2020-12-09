@@ -1,8 +1,8 @@
 package spring.test;
 
 import io.minio.errors.*;
+import minio.client.services.FileUploadService;
 import minio.client.spring.MinioConfiguration;
-import minio.client.spring.services.FileUploadService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

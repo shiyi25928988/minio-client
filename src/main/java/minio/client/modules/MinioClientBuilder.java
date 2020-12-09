@@ -1,18 +1,10 @@
 package minio.client.modules;
 
 import io.minio.MinioClient;
-import io.minio.credentials.Credentials;
-import io.minio.credentials.Provider;
-import io.minio.messages.ResponseDate;
-import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 
 import javax.inject.Inject;
 import javax.inject.Named;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.ZoneOffset;
-import java.time.ZonedDateTime;
 
 /**
  * @program: minio-client
