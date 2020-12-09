@@ -1,16 +1,15 @@
 package minio.client.spring;
 
 import io.minio.MinioClient;
+import minio.client.services.FileDownloadService;
 import minio.client.services.FileUploadService;
-import minio.client.services.FileUploadServiceImpl;
+import minio.client.services.impl.FileDownloadServiceImpl;
+import minio.client.services.impl.FileUploadServiceImpl;
 import okhttp3.OkHttpClient;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
-
-import javax.inject.Inject;
-import javax.inject.Named;
 
 /**
  * @program: minio-client
@@ -56,5 +55,10 @@ public class MinioConfiguration {
     @Bean
     FileUploadService getFileUploadService(){
         return new FileUploadServiceImpl();
+    }
+
+    @Bean
+    FileDownloadService getFileDownloadService(){
+        return new FileDownloadServiceImpl();
     }
 }
