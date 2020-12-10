@@ -25,10 +25,11 @@ import java.security.NoSuchAlgorithmException;
 public class Main {
 
     public static void main(String...strings) throws IOException, InvalidResponseException, InvalidKeyException, NoSuchAlgorithmException, ServerException, ErrorResponseException, XmlParserException, InsufficientDataException, InternalException {
-        Injector injector = Guice.createInjector(new MinioClientModule());
-        injector.getInstance(FileUploadService.class).upload("D:\\星蝶公主\\星蝶公主.Star.vs.The.Forces.of.Evil.S02E01.WEB-HR.Chs.Eng-Deefun迪幻字幕组.mp4","common", "video/mp4");
+        
+    	//Injector injector = Guice.createInjector(new MinioClientModule());
+        //injector.getInstance(FileUploadService.class).upload("D:\\星蝶公主\\星蝶公主.Star.vs.The.Forces.of.Evil.S02E01.WEB-HR.Chs.Eng-Deefun迪幻字幕组.mp4","common", "video/mp4");
 
-//        File file = injector.getInstance(FileDownloadService.class).download("minio.exe");
+        //log.info(injector.getInstance(FileUploadService.class).upload("D:\\Downloads\\2007.doc"));
 //
 //        log.info(file.getName());
 //        log.info(file.getAbsolutePath());

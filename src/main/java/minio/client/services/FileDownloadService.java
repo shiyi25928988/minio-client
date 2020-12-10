@@ -1,12 +1,19 @@
 package minio.client.services;
 
 import com.google.inject.ImplementedBy;
-import minio.client.services.impl.FileDownloadServiceImpl;
-import org.springframework.beans.factory.annotation.Value;
 
-import javax.inject.Inject;
-import javax.inject.Named;
-import java.io.File;
+import io.minio.errors.ErrorResponseException;
+import io.minio.errors.InsufficientDataException;
+import io.minio.errors.InternalException;
+import io.minio.errors.InvalidResponseException;
+import io.minio.errors.ServerException;
+import io.minio.errors.XmlParserException;
+import minio.client.services.impl.FileDownloadServiceImpl;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 
 /**
  * @program: minio-client
@@ -17,8 +24,39 @@ import java.io.File;
 @ImplementedBy(FileDownloadServiceImpl.class)
 public interface FileDownloadService {
 
-    File download(String fileName, String bucketName);
+    /**
+     * @param fileName
+     * @return
+     * @throws InvalidKeyException
+     * @throws ErrorResponseException
+     * @throws InsufficientDataException
+     * @throws InternalException
+     * @throws InvalidResponseException
+     * @throws NoSuchAlgorithmException
+     * @throws ServerException
+     * @throws XmlParserException
+     * @throws IllegalArgumentException
+     * @throws IOException
+     */
+    InputStream downloadStream(String fileName) throws InvalidKeyException, ErrorResponseException, InsufficientDataException, InternalException, InvalidResponseException, NoSuchAlgorithmException, ServerException, XmlParserException, IllegalArgumentException, IOException;
+    
+    /**
+     * @param fileName
+     * @param bucketName
+     * @return
+     * @throws InvalidKeyException
+     * @throws ErrorResponseException
+     * @throws InsufficientDataException
+     * @throws InternalException
+     * @throws InvalidResponseException
+     * @throws NoSuchAlgorithmException
+     * @throws ServerException
+     * @throws XmlParserException
+     * @throws IllegalArgumentException
+     * @throws IOException
+     */
+    InputStream downloadStream(String fileName, String bucketName) throws InvalidKeyException, ErrorResponseException, InsufficientDataException, InternalException, InvalidResponseException, NoSuchAlgorithmException, ServerException, XmlParserException, IllegalArgumentException, IOException;
 
-    File download(String fileName);
+    
 
 }
