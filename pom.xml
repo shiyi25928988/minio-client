@@ -80,7 +80,6 @@
 			<artifactId>logback-core</artifactId>
 			<version>${logback.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
@@ -103,30 +102,10 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
-
 
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>gg.jte</groupId>
-				<artifactId>jte-maven-plugin</artifactId>
-				<version>1.0.0</version>
-				<configuration>
-					<sourceDirectory>${basedir}/src/main/jte</sourceDirectory>
-					<targetDirectory>${basedir}/jte-classes</targetDirectory>
-					<contentType>Html</contentType>
-				</configuration>
-				<executions>
-					<execution>
-						<phase>process-classes</phase>
-						<goals>
-							<goal>precompile</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -138,4 +117,17 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<distributionManagement>
+		<repository>
+			<id>${releases.id}</id>
+			<name>${releases.name}</name>
+			<url>${releases.url}</url>
+		</repository>
+		<snapshotRepository>
+			<id>${snapshots.id}</id>
+			<name>${snapshots.name}</name>
+			<url>${snapshots.url}</url>
+		</snapshotRepository>
+	</distributionManagement>
 </project>
