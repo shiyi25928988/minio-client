@@ -11,6 +11,7 @@ import java.security.NoSuchAlgorithmException;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
+import minio.client.services.FileUploadService;
 
 /**
  * @program: minio-client
@@ -23,10 +24,11 @@ public class Main {
 
     public static void main(String...strings) throws IOException, InvalidResponseException, InvalidKeyException, NoSuchAlgorithmException, ServerException, ErrorResponseException, XmlParserException, InsufficientDataException, InternalException {
         Injector injector = Guice.createInjector(new MinioClientModule());
-        FileListService fileUploadService = injector.getInstance(FileListService.class);
-        fileUploadService.listFileName().forEach(e ->{
-        	log.info(e);
-        });
+        FileUploadService fileUploadService = injector.getInstance(FileUploadService.class);
+//        fileUploadService.listFileName().forEach(e ->{
+//        	log.info(e);
+//        });
+        fileUploadService.upload("D:\\32(1)(1).xlsx");
         
     }
 }

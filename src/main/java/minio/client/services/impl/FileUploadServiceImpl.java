@@ -115,25 +115,25 @@ public class FileUploadServiceImpl implements FileUploadService {
 			throws IOException, InvalidKeyException, InvalidResponseException, InsufficientDataException,
 			NoSuchAlgorithmException, ServerException, InternalException, XmlParserException, ErrorResponseException {
 
-		return upload(inputStream, fileName, defaultBucket);
+		return upload(inputStream, fileName, MimeType.getTypeByFileName(fileName));
 	}
 
 	/**
 	 *
 	 */
 	@Override
-	public String upload(InputStream inputStream, String fileName, String bucket)
+	public String upload(InputStream inputStream, String fileName, String contentType)
 			throws IOException, InvalidKeyException, InvalidResponseException, InsufficientDataException,
 			NoSuchAlgorithmException, ServerException, InternalException, XmlParserException, ErrorResponseException {
 
-		return upload(inputStream, fileName, bucket);
+		return upload(inputStream, fileName, contentType, defaultBucket);
 	}
 
 	/**
 	 *
 	 */
 	@Override
-	public String upload(InputStream inputStream, String fileName, String bucket, String contentType)
+	public String upload(InputStream inputStream, String fileName, String contentType, String bucket)
 			throws IOException, InvalidKeyException, InvalidResponseException, InsufficientDataException,
 			NoSuchAlgorithmException, ServerException, InternalException, XmlParserException, ErrorResponseException {
 

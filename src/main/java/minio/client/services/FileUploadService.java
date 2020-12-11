@@ -134,7 +134,7 @@ public interface FileUploadService {
     /**
      * @param inputStream
      * @param fileName
-     * @param bucket
+     * @param contentType
      * @return
      * @throws IOException
      * @throws InvalidKeyException
@@ -146,7 +146,7 @@ public interface FileUploadService {
      * @throws XmlParserException
      * @throws ErrorResponseException
      */
-    String upload(InputStream inputStream, String fileName, String bucket) throws IOException, InvalidKeyException, InvalidResponseException, InsufficientDataException, NoSuchAlgorithmException, ServerException, InternalException, XmlParserException, ErrorResponseException;
+    String upload(InputStream inputStream, String fileName, String contentType) throws IOException, InvalidKeyException, InvalidResponseException, InsufficientDataException, NoSuchAlgorithmException, ServerException, InternalException, XmlParserException, ErrorResponseException;
 
     /**
      * @param inputStream
@@ -164,6 +164,6 @@ public interface FileUploadService {
      * @throws XmlParserException
      * @throws ErrorResponseException
      */
-    String upload(InputStream inputStream, String fileName, String bucket, String contentType) throws IOException, InvalidKeyException, InvalidResponseException, InsufficientDataException, NoSuchAlgorithmException, ServerException, InternalException, XmlParserException, ErrorResponseException;
+    String upload(InputStream inputStream, String fileName, String contentType, String bucket) throws IOException, InvalidKeyException, InvalidResponseException, InsufficientDataException, NoSuchAlgorithmException, ServerException, InternalException, XmlParserException, ErrorResponseException;
 
 }

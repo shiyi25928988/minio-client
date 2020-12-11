@@ -27,6 +27,7 @@ public enum MimeType {
     TEXT_CSV("text/csv", "csv"),
     TEXT_XML("text/xml", "xml"),
     TEXT_CALENDAR("text/calendar", "ics"),
+    TEXT_MARKDOWN("text/markdown", "md"),
 
     /**
      * Common http application.
