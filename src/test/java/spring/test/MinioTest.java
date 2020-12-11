@@ -32,27 +32,27 @@ public class MinioTest {
     public void contextLoads() {
         ApplicationContext ctx = new AnnotationConfigApplicationContext(MinioConfiguration.class);
         FileUploadService fileUploadService = ctx.getBean(FileUploadService.class);
-        try {
-            fileUploadService.upload("D:\\Downloads\\minio.exe");
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InvalidKeyException e) {
-            e.printStackTrace();
-        } catch (InvalidResponseException e) {
-            e.printStackTrace();
-        } catch (InsufficientDataException e) {
-            e.printStackTrace();
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (ServerException e) {
-            e.printStackTrace();
-        } catch (InternalException e) {
-            e.printStackTrace();
-        } catch (XmlParserException e) {
-            e.printStackTrace();
-        } catch (ErrorResponseException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            fileUploadService.upload("D:\\Downloads\\minio.exe");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        } catch (InvalidKeyException e) {
+//            e.printStackTrace();
+//        } catch (InvalidResponseException e) {
+//            e.printStackTrace();
+//        } catch (InsufficientDataException e) {
+//            e.printStackTrace();
+//        } catch (NoSuchAlgorithmException e) {
+//            e.printStackTrace();
+//        } catch (ServerException e) {
+//            e.printStackTrace();
+//        } catch (InternalException e) {
+//            e.printStackTrace();
+//        } catch (XmlParserException e) {
+//            e.printStackTrace();
+//        } catch (ErrorResponseException e) {
+//            e.printStackTrace();
+//        }
         System.out.println("done");
     }
 

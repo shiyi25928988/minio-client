@@ -35,10 +35,6 @@ public class MinioClientBuilder {
     private boolean isHttps;
 
     @Inject
-    @Named("minio.bucket")
-    private String region;
-
-    @Inject
     private OkHttpClient okHttpClient;
 
     public MinioClient build() {
@@ -47,7 +43,7 @@ public class MinioClientBuilder {
                 .builder()
                 .httpClient(okHttpClient)
                 .endpoint(host, port, isHttps)
-                .region(region)
+                .region(null)
                 .credentials(username, password)
                 .build();
 

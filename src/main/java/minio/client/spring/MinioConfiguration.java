@@ -1,9 +1,15 @@
 package minio.client.spring;
 
 import io.minio.MinioClient;
+import minio.client.services.BucketListService;
+import minio.client.services.FileDeleteService;
 import minio.client.services.FileDownloadService;
+import minio.client.services.FileListService;
 import minio.client.services.FileUploadService;
+import minio.client.services.impl.BucketListServiceImpl;
+import minio.client.services.impl.FileDeleteServiceImpl;
 import minio.client.services.impl.FileDownloadServiceImpl;
+import minio.client.services.impl.FileListServiceImpl;
 import minio.client.services.impl.FileUploadServiceImpl;
 import okhttp3.OkHttpClient;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,7 +24,7 @@ import org.springframework.context.annotation.PropertySource;
  * @create: 2020-12-08 14:06
  */
 @Configuration
-@PropertySource(value="classpath:application.properties")
+@PropertySource(value="classpath:application.properties", ignoreResourceNotFound=true, encoding="UTF-8")
 public class MinioConfiguration {
 
     @Value("${minio.host}")
@@ -36,10 +42,6 @@ public class MinioConfiguration {
     @Value("${minio.host.isHttps}")
     private boolean isHttps;
 
-    @Value("${minio.bucket}")
-    private String region;
-
-
     @Bean
     MinioClient getMinioClient() {
         OkHttpClient okHttpClient = new OkHttpClient();
@@ -47,7 +49,7 @@ public class MinioConfiguration {
                 .builder()
                 .httpClient(okHttpClient)
                 .endpoint(host, port, isHttps)
-                .region(region)
+                .region(null)
                 .credentials(username, password)
                 .build();
     }
@@ -61,4 +63,20 @@ public class MinioConfiguration {
     FileDownloadService getFileDownloadService(){
         return new FileDownloadServiceImpl();
     }
+    
+    @Bean
+    FileDeleteService getFileDeleteService(){
+        return new FileDeleteServiceImpl();
+    }
+    
+    @Bean
+    BucketListService getBucketListService(){
+        return new BucketListServiceImpl();
+    }
+    
+    @Bean
+    FileListService getFileListService(){
+        return new FileListServiceImpl();
+    }
+    
 }

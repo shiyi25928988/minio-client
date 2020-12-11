@@ -19,6 +19,9 @@ import java.io.IOException;
 @Slf4j
 public class MinioClientModule extends AbstractModule {
 
+    /**
+     *
+     */
     @Override
     protected void configure() {
         try {
@@ -35,6 +38,12 @@ public class MinioClientModule extends AbstractModule {
     }
 
 
+    /**
+     * OkHttpClientProvider
+     * 
+     * @author shiyi
+     *
+     */
     public static class OkHttpClientProvider implements Provider<OkHttpClient>{
         @Override
         public OkHttpClient get() {
@@ -43,6 +52,12 @@ public class MinioClientModule extends AbstractModule {
         }
     }
 
+    /**
+     * MinioClientProsvider
+     * 
+     * @author shiyi
+     *
+     */
     public static class MinioClientProsvider implements Provider<MinioClient> {
 
         @Inject
