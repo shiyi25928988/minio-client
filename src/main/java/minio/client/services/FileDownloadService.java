@@ -1,5 +1,6 @@
 package minio.client.services;
 
+import minio.client.services.impl.FileDownloadServiceImpl;
 import com.google.inject.ImplementedBy;
 
 import io.minio.errors.ErrorResponseException;
@@ -8,7 +9,6 @@ import io.minio.errors.InternalException;
 import io.minio.errors.InvalidResponseException;
 import io.minio.errors.ServerException;
 import io.minio.errors.XmlParserException;
-import minio.client.services.impl.FileDownloadServiceImpl;
 
 import java.io.IOException;
 import java.io.InputStream;

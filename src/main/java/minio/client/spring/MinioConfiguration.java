@@ -1,15 +1,15 @@
 package minio.client.spring;
 
+import minio.client.services.impl.BucketListServiceImpl;
+import minio.client.services.impl.FileDeleteServiceImpl;
+import minio.client.services.impl.FileListServiceImpl;
 import io.minio.MinioClient;
 import minio.client.services.BucketListService;
 import minio.client.services.FileDeleteService;
 import minio.client.services.FileDownloadService;
 import minio.client.services.FileListService;
 import minio.client.services.FileUploadService;
-import minio.client.services.impl.BucketListServiceImpl;
-import minio.client.services.impl.FileDeleteServiceImpl;
 import minio.client.services.impl.FileDownloadServiceImpl;
-import minio.client.services.impl.FileListServiceImpl;
 import minio.client.services.impl.FileUploadServiceImpl;
 import okhttp3.OkHttpClient;
 import org.springframework.beans.factory.annotation.Value;

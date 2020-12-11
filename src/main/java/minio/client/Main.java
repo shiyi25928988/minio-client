@@ -3,9 +3,7 @@ package minio.client;
 import io.minio.errors.*;
 import lombok.extern.slf4j.Slf4j;
 import minio.client.modules.MinioClientModule;
-import minio.client.services.FileDeleteService;
 import minio.client.services.FileListService;
-import minio.client.services.FileUploadService;
 
 import java.io.IOException;
 import java.security.InvalidKeyException;

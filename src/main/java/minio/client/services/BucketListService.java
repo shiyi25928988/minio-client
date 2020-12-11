@@ -5,6 +5,7 @@ import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
+import minio.client.services.impl.BucketListServiceImpl;
 import com.google.inject.ImplementedBy;
 
 import io.minio.errors.ErrorResponseException;
@@ -14,7 +15,6 @@ import io.minio.errors.InvalidResponseException;
 import io.minio.errors.ServerException;
 import io.minio.errors.XmlParserException;
 import io.minio.messages.Bucket;
-import minio.client.services.impl.BucketListServiceImpl;
 
 @ImplementedBy(BucketListServiceImpl.class)
 public interface BucketListService {

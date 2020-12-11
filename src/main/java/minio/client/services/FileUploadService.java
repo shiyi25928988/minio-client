@@ -1,8 +1,8 @@
 package minio.client.services;
 
+import minio.client.services.impl.FileUploadServiceImpl;
 import com.google.inject.ImplementedBy;
 import io.minio.errors.*;
-import minio.client.services.impl.FileUploadServiceImpl;
 
 import java.io.File;
 import java.io.IOException;

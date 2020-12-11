@@ -1,6 +1,5 @@
 package spring.test;
 
-import io.minio.errors.*;
 import minio.client.services.FileUploadService;
 import minio.client.spring.MinioConfiguration;
 import org.junit.Test;
@@ -10,10 +9,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import java.io.IOException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
 
 /**
  * @program: minio-client
