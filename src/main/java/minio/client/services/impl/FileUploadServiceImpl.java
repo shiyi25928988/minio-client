@@ -104,7 +104,7 @@ public class FileUploadServiceImpl implements FileUploadService {
 			throws IOException, InvalidKeyException, InvalidResponseException, InsufficientDataException,
 			NoSuchAlgorithmException, ServerException, InternalException, XmlParserException, ErrorResponseException {
 
-		return upload(new BufferedInputStream(new FileInputStream(file)), file.getName(), bucket, contentType);
+		return upload(new BufferedInputStream(new FileInputStream(file)), file.getName(), contentType, bucket);
 	}
 
 	/**

@@ -12,6 +12,7 @@ import java.security.NoSuchAlgorithmException;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import minio.client.services.FileUploadService;
+import minio.client.upload.UploadObject;
 
 /**
  * @program: minio-client
@@ -28,7 +29,9 @@ public class Main {
 //        fileUploadService.listFileName().forEach(e ->{
 //        	log.info(e);
 //        });
-        fileUploadService.upload("D:\\32(1)(1).xlsx");
+       // fileUploadService.upload("D:\\32(1)(1).xlsx");
+        
+        new UploadObject().fileUploadService(fileUploadService).subFolder("abcde/EFG").filePath("D:\\32(1)(1).xlsx").upload();
         
     }
 }
