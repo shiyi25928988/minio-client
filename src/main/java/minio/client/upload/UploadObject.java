@@ -21,6 +21,12 @@ import lombok.NonNull;
 import minio.client.http.MimeType;
 import minio.client.services.FileUploadService;
 
+/**
+ * @program: minio-client
+ * @description: UploadObject
+ * @author: shiyi
+ * @create: 2020-12-08 14:06
+ */
 public class UploadObject {
 
 	private String filePath;
@@ -39,6 +45,11 @@ public class UploadObject {
 
 	private FileUploadService fileUploadService;
 
+	/**
+	 * @param file
+	 * @return
+	 * @throws FileNotFoundException
+	 */
 	public UploadObject file(@NonNull File file) throws FileNotFoundException {
 		this.file = file;
 		this.fileName = file.getName();
@@ -47,6 +58,11 @@ public class UploadObject {
 		return this;
 	}
 
+	/**
+	 * @param filePath
+	 * @return
+	 * @throws FileNotFoundException
+	 */
 	public UploadObject filePath(@NonNull String filePath) throws FileNotFoundException {
 		this.filePath = filePath;
 		this.file = new File(filePath);
@@ -56,21 +72,37 @@ public class UploadObject {
 		return this;
 	}
 
+	/**
+	 * @param inputStream
+	 * @return
+	 */
 	public UploadObject inputStream(@NonNull InputStream inputStream) {
 		this.inputStream = inputStream;
 		return this;
 	}
 
+	/**
+	 * @param contentType
+	 * @return
+	 */
 	public UploadObject contentType(@NonNull String contentType) {
 		this.contentType = contentType;
 		return this;
 	}
 
+	/**
+	 * @param bucket
+	 * @return
+	 */
 	public UploadObject bucket(@NonNull String bucket) {
 		this.bucket = bucket;
 		return this;
 	}
 
+	/**
+	 * @param subFolder
+	 * @return
+	 */
 	public UploadObject subFolder(@NonNull String subFolder) {
 		if (!subFolder.endsWith("/")) {
 			this.subFolder = subFolder + "/";
@@ -80,11 +112,27 @@ public class UploadObject {
 		return this;
 	}
 
+	/**
+	 * @param fileUploadService
+	 * @return
+	 */
 	public UploadObject fileUploadService(@NonNull FileUploadService fileUploadService) {
 		this.fileUploadService = fileUploadService;
 		return this;
 	}
 
+	/**
+	 * @return
+	 * @throws InvalidKeyException
+	 * @throws InvalidResponseException
+	 * @throws InsufficientDataException
+	 * @throws NoSuchAlgorithmException
+	 * @throws ServerException
+	 * @throws InternalException
+	 * @throws XmlParserException
+	 * @throws ErrorResponseException
+	 * @throws IOException
+	 */
 	public String upload()
 			throws InvalidKeyException, InvalidResponseException, InsufficientDataException, NoSuchAlgorithmException,
 			ServerException, InternalException, XmlParserException, ErrorResponseException, IOException {

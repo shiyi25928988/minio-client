@@ -42,6 +42,9 @@ public class MinioConfiguration {
     @Value("${minio.host.isHttps}")
     private boolean isHttps;
 
+    /**
+     * @return MinioClient
+     */
     @Bean
     MinioClient getMinioClient() {
         OkHttpClient okHttpClient = new OkHttpClient();
@@ -54,26 +57,41 @@ public class MinioConfiguration {
                 .build();
     }
 
+    /**
+     * @return FileUploadService
+     */
     @Bean
     FileUploadService getFileUploadService(){
         return new FileUploadServiceImpl();
     }
 
+    /**
+     * @return FileDownloadService
+     */
     @Bean
     FileDownloadService getFileDownloadService(){
         return new FileDownloadServiceImpl();
     }
     
+    /**
+     * @return FileDeleteService
+     */
     @Bean
     FileDeleteService getFileDeleteService(){
         return new FileDeleteServiceImpl();
     }
     
+    /**
+     * @return BucketListService
+     */
     @Bean
     BucketListService getBucketListService(){
         return new BucketListServiceImpl();
     }
     
+    /**
+     * @return FileListService
+     */
     @Bean
     FileListService getFileListService(){
         return new FileListServiceImpl();
