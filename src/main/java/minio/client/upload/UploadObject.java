@@ -85,21 +85,21 @@ public class UploadObject {
 		return this;
 	}
 
-	public void upload()
+	public String upload()
 			throws InvalidKeyException, InvalidResponseException, InsufficientDataException, NoSuchAlgorithmException,
 			ServerException, InternalException, XmlParserException, ErrorResponseException, IOException {
 
 		if (Strings.isNullOrEmpty(bucket)) {
 			if (Strings.isNullOrEmpty(subFolder)) {
-				this.fileUploadService.upload(inputStream, fileName, contentType);
+				return this.fileUploadService.upload(inputStream, fileName, contentType);
 			} else {
-				this.fileUploadService.upload(inputStream, subFolder.concat(fileName), contentType);
+				return this.fileUploadService.upload(inputStream, subFolder.concat(fileName), contentType);
 			}
 		}else {
 			if (Strings.isNullOrEmpty(subFolder)) {
-				this.fileUploadService.upload(inputStream, fileName, contentType, bucket);
+				return this.fileUploadService.upload(inputStream, fileName, contentType, bucket);
 			} else {
-				this.fileUploadService.upload(inputStream, subFolder.concat(fileName), contentType, bucket);
+				return this.fileUploadService.upload(inputStream, subFolder.concat(fileName), contentType, bucket);
 			}
 		}
 
