@@ -41,7 +41,7 @@ public class UploadObject {
 
 	private String subFolder;
 
-	private String contentType;
+	private String contentType = MimeType.APPLICATION_OCTET_STREAM.type();
 
 	private FileUploadService fileUploadService;
 
@@ -55,6 +55,11 @@ public class UploadObject {
 		this.fileName = file.getName();
 		this.inputStream = new BufferedInputStream(new FileInputStream(file));
 		this.contentType = MimeType.getTypeByFileName(this.fileName);
+		return this;
+	}
+
+	public UploadObject fileName(@NonNull String fileName) {
+		this.fileName = fileName;
 		return this;
 	}
 

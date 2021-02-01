@@ -115,6 +115,10 @@ public enum MimeType {
     String type;
     String extension;
 
+    public String type(){
+        return this.type;
+    }
+
     private MimeType(String type, String extension) {
         this.type = type;
         this.extension = extension;
